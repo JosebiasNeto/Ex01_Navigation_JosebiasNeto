@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.navigationcomponet.databinding.FragmentQuestionsBinding
@@ -37,6 +39,10 @@ class SecondFragment: Fragment() {
                 answer.putInt("answer", lastAnswer)
             }
             it.findNavController().navigate(R.id.action_secondFragment_to_thirdFragment, answer)
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(this){
+            Toast.makeText(context, "Nao e possivel retornar a tela anterior", Toast.LENGTH_SHORT).show()
         }
 
         return binding.root
