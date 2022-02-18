@@ -30,7 +30,7 @@ class ThirdFragment:Fragment() {
         binding.btnConfirm.setOnClickListener {
             val lastAnswer: Int = arguments!!.get("answer") as Int
             var result = Bundle()
-            if(binding.radioGroup.checkedRadioButtonId == 0){
+            if(binding.firstAnswer.isChecked){
                 result.putInt("result", 1 + lastAnswer)
             } else {
                 result.putInt("result", lastAnswer)

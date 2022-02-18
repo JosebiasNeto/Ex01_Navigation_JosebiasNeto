@@ -29,7 +29,7 @@ class FirstFragment: Fragment() {
 
         binding.btnConfirm.setOnClickListener {
             val answer = Bundle()
-            if(binding.radioGroup.checkedRadioButtonId == 2){
+            if(binding.thirdAnswer.isChecked){
                 answer.putInt("answer", 1)
             } else {
                 answer.putInt("answer", 0)
@@ -39,4 +39,6 @@ class FirstFragment: Fragment() {
 
         return binding.root
     }
+
+
 }
